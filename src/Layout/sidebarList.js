@@ -4,15 +4,17 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import FormIcon from '@material-ui/icons/ListAlt';
-import HomeIcon from '@material-ui/icons/Home';
-import DirectionsIcon from '@material-ui/icons/Info';
+import HomeIcon from '@material-ui/icons/HomeOutlined';
+import DirectionsIcon from '@material-ui/icons/InfoOutlined';
 import { Link as RouterLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import PropTypes from 'prop-types';
 
 
 //Material UI's ListItemLink
 function ListItemLink(props) {
   const { icon, primary, to } = props;
+  const location = useLocation()
 
   const renderLink = React.useMemo(
     () => React.forwardRef((itemProps, ref) => <RouterLink to={to} ref={ref} {...itemProps} />),
@@ -21,7 +23,10 @@ function ListItemLink(props) {
 
   return (
     <li>
-      <ListItem button component={renderLink}>
+      <ListItem 
+        button 
+        component={renderLink} 
+        >
         {icon ? <ListItemIcon>{icon}</ListItemIcon> : null}
         <ListItemText primary={primary} />
       </ListItem>
