@@ -7,14 +7,12 @@ import FormIcon from '@material-ui/icons/ListAlt';
 import HomeIcon from '@material-ui/icons/HomeOutlined';
 import DirectionsIcon from '@material-ui/icons/InfoOutlined';
 import { Link as RouterLink } from 'react-router-dom';
-import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import PropTypes from 'prop-types';
 
 
 //Material UI's ListItemLink
 function ListItemLink(props) {
   const { icon, primary, to } = props;
-  const location = useLocation()
 
   const renderLink = React.useMemo(
     () => React.forwardRef((itemProps, ref) => <RouterLink to={to} ref={ref} {...itemProps} />),
