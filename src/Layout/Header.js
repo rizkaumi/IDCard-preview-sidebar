@@ -1,6 +1,5 @@
 import * as React from 'react';
 import clsx from 'clsx';
-// import LayoutStyles from './LayoutStyle'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -53,6 +52,7 @@ const Header = ({ open, toggleDrawer }) => {
       <AppBar
         position="absolute"
         className={clsx(classes.appBar, open && classes.appBarShift)}
+        style={{ background: "#2e7ca6" }}
       >
         <Toolbar className={classes.toolbar}>
           <IconButton
